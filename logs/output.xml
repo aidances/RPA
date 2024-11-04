@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1.1 (Python 3.11.6 on linux)" generated="2024-11-04T12:41:49.894192" rpa="false" schemaversion="5">
+<suite id="s1" name="Test-Cases" source="/home/computeruse/rpa/test-cases">
+<suite id="s1-s1" name="Example" source="/home/computeruse/rpa/test-cases/example.robot">
+<test id="s1-s1-t1" name="Search Google with &quot;Google Search&quot; button via Firefox" line="10">
+<kw name="Open Url With Firefox" owner="keywords">
+<kw name="Open Url" owner="keywords">
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2024-11-04T12:41:50.043184" level="INFO">Creating an instance of the Firefox WebDriver.</msg>
+<arg>${browser}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2024-11-04T12:41:50.043000" elapsed="1.608681"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-11-04T12:41:51.651973" elapsed="0.012800"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-11-04T12:41:51.665314" level="INFO">Opening url 'https://www.google.com/'</msg>
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-11-04T12:41:51.665054" elapsed="2.938388"/>
+</kw>
+<kw name="Wait For Condition" owner="SeleniumLibrary">
+<arg>return !!document.body</arg>
+<doc>Waits until ``condition`` is true or ``timeout`` expires.</doc>
+<status status="PASS" start="2024-11-04T12:41:54.603757" elapsed="0.013112"/>
+</kw>
+<arg>Firefox</arg>
+<arg>${url}</arg>
+<status status="PASS" start="2024-11-04T12:41:50.042189" elapsed="4.574894"/>
+</kw>
+<arg>${GOOGLE_URL}</arg>
+<status status="PASS" start="2024-11-04T12:41:50.041758" elapsed="4.575427"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css:form</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-04T12:41:54.617489" elapsed="0.015119"/>
+</kw>
+<kw name="Enter Keyword">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-11-04T12:41:54.633841" level="INFO">Typing text 'Github' into text field 'xpath://textarea[@name="q"]'.</msg>
+<arg>xpath://textarea[@name="q"]</arg>
+<arg>${keyword}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-04T12:41:54.633519" elapsed="0.041677"/>
+</kw>
+<arg>Github</arg>
+<status status="PASS" start="2024-11-04T12:41:54.633049" elapsed="0.042348"/>
+</kw>
+<kw name="Click Search Button">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://input[@value="Google Search"]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-04T12:41:54.676297" elapsed="0.221729"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-04T12:41:54.898712" level="INFO">Clicking element 'xpath://input[@value="Google Search"]'.</msg>
+<arg>xpath://input[@value="Google Search"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-04T12:41:54.898319" elapsed="1.185904"/>
+</kw>
+<status status="PASS" start="2024-11-04T12:41:54.675883" elapsed="1.408510"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css:div#rso</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-04T12:41:56.084657" elapsed="0.009156"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-11-04T12:41:56.100367" level="INFO">Current page contains element 'xpath://cite[contains(text(), "github.com")]'.</msg>
+<arg>xpath://cite[contains(text(), "github.com")]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2024-11-04T12:41:56.094166" elapsed="0.006394"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-11-04T12:41:56.101200" elapsed="0.724079"/>
+</kw>
+<status status="PASS" start="2024-11-04T12:41:50.041047" elapsed="6.784407"/>
+</test>
+<doc>Search Google</doc>
+<status status="PASS" start="2024-11-04T12:41:49.914963" elapsed="6.911142"/>
+</suite>
+<status status="PASS" start="2024-11-04T12:41:49.895012" elapsed="6.931910"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Test-Cases">Test-Cases</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Example">Test-Cases.Example</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

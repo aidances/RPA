@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1.1 (Python 3.11.6 on linux)" generated="2024-11-04T12:34:27.025520" rpa="false" schemaversion="5">
+<suite id="s1" name="Test-Cases" source="/home/computeruse/rpa/test-cases">
+<suite id="s1-s1" name="Example" source="/home/computeruse/rpa/test-cases/example.robot">
+<test id="s1-s1-t1" name="Search Google with &quot;Google Search&quot; button via Firefox" line="10">
+<kw name="Open Url With Firefox" owner="keywords">
+<kw name="Open Url" owner="keywords">
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2024-11-04T12:34:27.172115" level="INFO">Creating an instance of the Firefox WebDriver.</msg>
+<arg>${browser}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2024-11-04T12:34:27.171907" elapsed="1.573246"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-11-04T12:34:28.745467" elapsed="0.002302"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-11-04T12:34:28.748281" level="INFO">Opening url 'https://www.google.com/'</msg>
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-11-04T12:34:28.747998" elapsed="1.178108"/>
+</kw>
+<kw name="Wait For Condition" owner="SeleniumLibrary">
+<arg>return !!document.body</arg>
+<doc>Waits until ``condition`` is true or ``timeout`` expires.</doc>
+<status status="PASS" start="2024-11-04T12:34:29.926429" elapsed="0.014381"/>
+</kw>
+<arg>Firefox</arg>
+<arg>${url}</arg>
+<status status="PASS" start="2024-11-04T12:34:27.171132" elapsed="2.769913"/>
+</kw>
+<arg>${GOOGLE_URL}</arg>
+<status status="PASS" start="2024-11-04T12:34:27.170632" elapsed="2.770519"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css:form</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-04T12:34:29.941484" elapsed="0.016963"/>
+</kw>
+<kw name="Enter Keyword">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-11-04T12:34:29.960831" level="INFO">Typing text 'Github' into text field 'xpath://input[@name="q"]'.</msg>
+<msg time="2024-11-04T12:34:30.020458" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-10.png"&gt;&lt;img src="selenium-screenshot-10.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-11-04T12:34:30.020697" level="FAIL">Element with locator 'xpath://input[@name="q"]' not found.</msg>
+<arg>xpath://input[@name="q"]</arg>
+<arg>${keyword}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="FAIL" start="2024-11-04T12:34:29.960177" elapsed="0.062097">Element with locator 'xpath://input[@name="q"]' not found.</status>
+</kw>
+<arg>Github</arg>
+<status status="FAIL" start="2024-11-04T12:34:29.959240" elapsed="0.063408">Element with locator 'xpath://input[@name="q"]' not found.</status>
+</kw>
+<kw name="Click Search Button">
+<status status="NOT RUN" start="2024-11-04T12:34:30.023071" elapsed="0.000050"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css:div#rso</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2024-11-04T12:34:30.023354" elapsed="0.000032"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<arg>xpath://cite[contains(text(), "https://github.com/")]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" start="2024-11-04T12:34:30.023596" elapsed="0.000031"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-11-04T12:34:30.023966" elapsed="0.903309"/>
+</kw>
+<status status="FAIL" start="2024-11-04T12:34:27.169889" elapsed="3.757604">Element with locator 'xpath://input[@name="q"]' not found.</status>
+</test>
+<doc>Search Google</doc>
+<status status="FAIL" start="2024-11-04T12:34:27.045253" elapsed="3.882969"/>
+</suite>
+<status status="FAIL" start="2024-11-04T12:34:27.026401" elapsed="3.902692"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Test-Cases">Test-Cases</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="Example">Test-Cases.Example</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
